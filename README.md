@@ -26,4 +26,32 @@ use `POSTGRES_URL_NO_SSL` value from `env.local` on Vercel dashboard
 ```
 DATABASE_URL=postgres://default:**********:5432/verceldb
 ```
+
+## Init Auth.js
+
+```
+npm install next-auth@beta
+npx auth secret
+touch src/auth.ts
+touch src/middleware.ts
+touch src/app/api/auth/\[...nextauth\]/route.ts
+```
+
+### Create GitHub OAuth
+
+https://github.com/settings/developers
+
+Chose a name
+
+Homepage URL: http://localhost:3000/
+
+Authorization callback URL: http://localhost:3000/api/auth/callback/github
+
+(Homepage URL and Authorization callback URLs can be changed later)
+
+in `.env.local`
+
+```
+AUTH_GITHUB_ID=********
+AUTH_GITHUB_SECRET=********
 ```
