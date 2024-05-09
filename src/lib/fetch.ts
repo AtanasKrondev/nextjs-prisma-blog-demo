@@ -26,3 +26,17 @@ export async function createPost(data: {
     data,
   });
 }
+
+export async function getPostById(id: string) {
+  return await prisma.post.findUnique({
+    where: { id },
+    include: {
+      user: {
+        select: {
+          name: true,
+          image: true,
+        },
+      },
+    },
+  });
+}
