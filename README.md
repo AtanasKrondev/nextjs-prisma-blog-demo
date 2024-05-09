@@ -69,3 +69,7 @@ npx shadcn-ui@latest add button
 ```
 
 or manualy, check https://ui.shadcn.com/docs/components/
+
+## Dark mode
+
+https://ui.shadcn.com/docs/dark-mode/next
