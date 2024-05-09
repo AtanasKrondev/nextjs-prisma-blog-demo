@@ -3,18 +3,18 @@ import { Button, buttonVariants } from '@/components/ui/button';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { ModeToggle } from '@/components/mode-toggle';
 import { auth, signIn, signOut } from '@/auth';
-import { LogIn, LogOut } from 'lucide-react';
+import { LogIn, LogOut, Plus } from 'lucide-react';
 
 export async function DesktopNavigation() {
   const session = await auth();
 
   return (
     <div className="hidden lg:flex xl:gap-x-4">
-      <Link href="/" className={buttonVariants({ variant: 'link' })}>
-        Home
-      </Link>
       {session?.user ? (
         <>
+          <Link href="/new" className={buttonVariants({ variant: 'link' })}>
+            New post <Plus />
+          </Link>
           <div className="flex items-center gap-x-2 text-sm font-medium">
             <Avatar>
               {session.user.image && <AvatarImage src={session.user.image} />}

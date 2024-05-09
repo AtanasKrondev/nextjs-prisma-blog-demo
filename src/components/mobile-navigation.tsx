@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { Home, LogIn, LogOut, Menu, X } from 'lucide-react';
+import { Home, LogIn, LogOut, Menu, Plus, X } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import {
   Sheet,
@@ -34,16 +34,16 @@ export async function MobileNavigation() {
             </SheetClose>
           </div>
           <div className="flex flex-col items-end space-y-1 w-full p-4">
-            <SheetClose asChild>
-              <Link
-                href="/"
-                className={cn(buttonVariants({ variant: 'link' }), 'pr-0')}
-              >
-                Home
-              </Link>
-            </SheetClose>
             {session?.user ? (
               <>
+                <SheetClose asChild>
+                  <Link
+                    href="/new"
+                    className={cn(buttonVariants({ variant: 'link' }), 'pr-0')}
+                  >
+                    New post <Plus />
+                  </Link>
+                </SheetClose>
                 <div className="flex items-center gap-x-2 text-sm font-medium">
                   <Avatar>
                     {session.user.image && (
