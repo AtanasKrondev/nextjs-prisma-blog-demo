@@ -55,3 +55,17 @@ in `.env.local`
 AUTH_GITHUB_ID=********
 AUTH_GITHUB_SECRET=********
 ```
+
+## Shadcn/ui
+
+```
+npx shadcn-ui@latest init
+```
+
+Now you can add components either through the CLI like
+
+```
+npx shadcn-ui@latest add button
+```
+
+or manualy, check https://ui.shadcn.com/docs/components/
